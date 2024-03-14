@@ -1,6 +1,10 @@
 @font-face {
-  font-family: "Barlow";
-  src: url('/assets/fonts/Barlow-Regular.otf');
+  font-family: 'barlowregular';
+  src: url('assets/fonts/barlow-regular-webfont.woff2') format('woff2'),
+       url('assets/fonts/barlow-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 :root {
@@ -15,7 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Barlow", Helvetica;
+    font-family: "barlowregular", Helvetica;
   }
 
   body{
@@ -24,7 +28,7 @@
   }
 
   .header {
-    font-family: "Barlow", Helvetica;
+    font-family: "barlowregular", Helvetica;
     position: fixed;
     top: 0px;
     left: 0;
