@@ -5,10 +5,10 @@
 
 :root {
   --background-color: #eeedec;
-  --highlight-color: #49bfdd;
+  --highlight-color: #ecd044;
   --text-color: #333333;
   --shadow-color: #dc71ff;
-  --bonus-color: #feffb6;
+  --bonus-color: #917cb6;
 }
 
   * {
