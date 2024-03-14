@@ -1,0 +1,682 @@
+@font-face {
+  font-family: "Barlow";
+  src: url(/assets/fonts/Barlow-Regular.otf);
+}
+
+:root {
+  --background-color: #eeedec;
+  --highlight-color: #49bfdd;
+  --text-color: #333333;
+  --shadow-color: #dc71ff;
+  --bonus-color: #feffb6;
+}
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow", Helvetica;
+  }
+
+  body{
+    /* background: linear-gradient(45deg,var(--bonus-color),#6fc4da); */
+    color: var(--text-color);
+  }
+
+  .header {
+    font-family: "Barlow", Helvetica;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Ajuste la hauteur selon tes besoins */
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: var(--background-color);
+  }
+  
+  .logo {
+    font-size: 25px;
+    color: var(--text-color);
+    position: fixed;
+    top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 100;
+    /* Animation part */
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    margin-top: 0px; /* Ajuste cette valeur pour aligner le logo */
+  }
+  
+  body {
+    margin-top: 0px; /* Ajuste cette valeur selon la hauteur de ton header */
+  }
+  
+
+.menu {
+  position: absolute;
+  right: 20px;
+  z-index: 11;
+  width: 100%;
+  bottom: 0px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.menu a {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 30px;
+  transition: .3s;
+  /* Animation part  */
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.menu a:hover,
+.menu a.active {
+  color: var(--highlight-color);
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 15px 10% 0;
+  background: linear-gradient(45deg,var(--bonus-color),#6fc4da);
+}
+
+/* ---------------------------------- NOM PRENOM TEXTES ---------------------------------- */
+.home-content {
+  background: transparent;
+  max-width: 600px;
+  /* margin-left: -30px; */
+}
+
+.home-content h1{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--highlight-color);
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: .7s;
+}
+
+.home-content h3{
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content h4{
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--highlight-color);
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.home-content p{
+  font-size: 16px;
+  margin: 20px 0 0px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+/* ---------------------------------- BOUTONS PRESENTATION ---------------------------------- */
+.home-content .btn-box{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  height: 50px;
+  background: transparent;
+}
+
+.btn-box a{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: var(--highlight-color);
+  border: 2px solid var(--highlight-color);
+  border-radius: 8px;
+  font-size: 19px;
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1.8s;
+  animation-delay: calc(.3s * var(---i));
+}
+
+.btn-box a:hover {
+  color: var(--highlight-color);
+}
+
+.btn-box a:nth-child(2){
+  background: var(--background-color);
+  color: var(--highlight-color);
+}
+
+.btn-box a:nth-child(2):hover{
+  color: var(--background-color);
+}
+
+.btn-box a:nth-child(2)::before{
+  background: var(--highlight-color);
+}
+
+.btn-box a::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 0%;
+height: 100%;
+background: var(--background-color);
+z-index: -1;
+transition: .1s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+}
+
+/* ------------------ ICONES LOGO  ------------------ */
+.home-sci a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg,var(--text-color), var(--highlight-color));
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 20px 20px;
+  z-index: 1; 
+}
+
+.home-sci a:nth-child(1) {
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.home-sci a:nth-child(2) {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.home-sci a:nth-child(3) {
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,var(--background-color), var(--highlight-color));
+  border-radius: 50%;
+  z-index: -1;
+  transition: .5s ease;
+}
+
+.home-sci a:hover::before {
+  filter: blur(3px);
+}
+
+.home-sci a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  border-radius: 50%;
+  transform: scale(.88);
+  z-index: -1;
+  transition: .1s ease;
+}
+
+.home-sci a:hover::after {
+  transform: scale(0);
+}
+
+/* ------------------ PHOTO ID ------------------ */
+.home-img {
+  width: 380px;
+  height: 380px;
+  background: transparent;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2.5s, 4s;
+}
+
+.home-img .glowing-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background: greenyellow; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img .glowing-circle::after {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  /* background: var(--background-color); */
+  border-radius: 50%;
+}
+
+.glowing-circle span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,var(--highlight-color), var(--shadow-color));
+  border-radius: 50%;
+  animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1) {
+  filter: blur(10px);
+}
+
+
+.glowing-circle .photoid {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  background: var(--background-color);
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.photoid img {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 350px;
+  object-fit: cover;
+}
+
+/* ------------------ ANIMATIONS CLE ------------------ */
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+}
+
+@keyframes slideBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-24px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ------------------FIN DE HOME------------------ */
+
+/* ------------------XP PRO------------------ */
+.xp {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-around;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 20px 10% 0;
+  background: #333333;
+}
+
+.xppro-content {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.xppro-content h2 {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  color: var(--background-color);
+  margin: 30px;
+}
+
+.xppro-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 100px;
+  background-color: var(--highlight-color);
+}
+
+.container {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.carousel {
+  border: 2px solid var(--highlight-color);
+  height: 200px auto;
+  position: relative;
+  border-radius: 40px;
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.carousel .slider section h3 {
+color: var(--highlight-color);
+font-size: 22px;
+}
+
+.carousel .slider section h2 {
+  color: var(--highlight-color);
+  font-size: 30px;
+}
+
+.slider {
+  height: 100%;
+  display: flex;
+  width: 400%;
+  /* border: 1px solid red; */
+  transition: all 0.3s;
+}
+
+.slider section {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  padding-bottom: 0;
+  padding-top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.controls .arrow i {
+  font-size: 35px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.controls ul {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.controls ul li {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #333;
+  border-radius: 50px;
+  margin: 8px;
+  background: #333;
+  cursor: pointer;
+}
+
+.controls ul li.selected {
+  background: transparent;
+}
+
+/* ------------------FIN DE XP PRO------------------ */
+
+/* ------------------SKILLS------------------ */
+.skills {
+  padding-top: 20px;
+  background: linear-gradient(45deg,#6fc4da,var(--bonus-color));
+}
+
+.skills-content {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft .5s ease forwards;
+  animation-delay: .5s;
+}
+
+.skills-content h2 {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.skills-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 100px;
+  background-color: var(--highlight-color);
+}
+
+.container-skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 1rem;
+  padding: 1rem 80px;
+  font-size: 1.2rem;
+}
+
+.skill-box {
+  padding: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.skill-box:hover > .skill-title::after, .skill-box:hover > .skill-title::before{
+  width: 35px;
+}
+
+.skill-box:hover .img {
+  transform: translateY(-10px);
+}
+
+.skill-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.skill-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  width: 0;
+  height: 4px;
+  border-radius: 2px 0 0 2px;
+  background-color: #dc71ff;
+  transition: .5s;
+}
+
+.skill-title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 0;
+  height: 4px;
+  border-radius: 0 2px 2px 0px;
+  background-color: #dc71ff;
+  transition: .4s;
+}
+
+.img {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  border-radius: 45px;
+  background-color: var(--text-color);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+
+
+
+
+
+
+.softskills-title {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft .5s ease forwards;
+  animation-delay: .5s;
+}
+
+.softskills-title h2 {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.softskills-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 100px;
+  background-color: var(--highlight-color);
+}
