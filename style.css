@@ -585,19 +585,18 @@ font-size: 22px;
 
 .container-skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   text-align: center;
   grid-gap: 1rem;
   padding: 1rem 80px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .skill-box {
   padding: 1rem;
   color: var(--text-color);
-  cursor: pointer;
 }
 
 .skill-box:hover > .skill-title::after, .skill-box:hover > .skill-title::before{
@@ -615,6 +614,7 @@ font-size: 22px;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   position: relative;
+  cursor: pointer;
 }
 
 .skill-title::after {
@@ -642,11 +642,11 @@ font-size: 22px;
 }
 
 .img {
-  width: 160px;
-  height: 160px;
+  width: 90px;
+  height: 90px;
   position: relative;
-  border-radius: 45px;
-  background-color: var(--text-color);
+  border-radius: 15px;
+  background-color: var(--highlight-color);
   margin: 10px;
   display: flex;
   justify-content: center;
@@ -654,8 +654,7 @@ font-size: 22px;
   transition: .4s;
 }
 
-
-
+/* ---------------------- */
 
 
 
@@ -666,6 +665,7 @@ font-size: 22px;
   opacity: 0;
   animation: slideLeft .5s ease forwards;
   animation-delay: .5s;
+  padding-bottom: 20px;
 }
 
 .softskills-title h2 {
@@ -683,4 +683,23 @@ font-size: 22px;
   height: 4px;
   width: 100px;
   background-color: var(--highlight-color);
+}
+
+.softskills {
+  display: flex;
+  height: 75%;
+  width: 75%;
+  flex-basis: 100%;
+  padding: 25px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--bonus-color);
+  height: 200px auto;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(30deg,var(--highlight-color),var(--background-color));
+  color: var(--text-color);
+  overflow: hidden;
+  size: 20px;
 }
