@@ -4,7 +4,6 @@
        url('assets/fonts/barlow-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 :root {
@@ -15,81 +14,190 @@
   --bonus-color: #917cb6;
 }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "barlowregular", Helvetica;
-  }
-
-  body{
-    /* background: linear-gradient(45deg,var(--bonus-color),#6fc4da); */
-    color: var(--text-color);
-  }
-
-  .header {
-    font-family: "barlowregular", Helvetica;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 50px; /* Ajuste la hauteur selon tes besoins */
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    background: var(--background-color);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "barlowregular", Helvetica;
   
-  .logo {
-    font-size: 25px;
-    color: var(--text-color);
-    position: fixed;
-    top: 20px;
-    text-decoration: none;
-    font-weight: 600;
-    z-index: 100;
-    /* Animation part */
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    margin-top: 0px; /* Ajuste cette valeur pour aligner le logo */
-  }
-  
-  body {
-    margin-top: 0px; /* Ajuste cette valeur selon la hauteur de ton header */
-  }
-  
-
-.menu {
-  position: absolute;
-  right: 20px;
-  z-index: 11;
-  width: 100%;
-  bottom: 0px;
-  text-align: right;
-  margin-right: 20px;
 }
 
-.menu a {
-  display: inline-block;
-  font-size: 18px;
+body {
+  /* display: flex; */
+  height: 100vh;
   color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 30px;
-  transition: .3s;
-  /* Animation part  */
-  opacity: 0;
-  animation: slideTop .5s ease forwards;
-  animation-delay: calc(.2s * var(--i));
+  margin-top: 0px;
+  background: linear-gradient(45deg,var(--bonus-color),#6fc4da);
 }
 
-.menu a:hover,
-.menu a.active {
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--background-color);
+  font-size: 1.2rem;
+}
+
+a:hover {
   color: var(--highlight-color);
 }
 
+header {
+  font-family: "barlowregular", Helvetica;
+  position: relative;
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.238);
+}
+
+.navbar {
+  font-family: "barlowregular", Helvetica;
+  width: 100%;
+  max-width: 1200px;
+  height:  60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* color: var(--text-color); */
+  top: 20px;
+  font-weight: 600;
+  z-index: 100;
+  /* Partie Animation */
+  opacity: 1;
+  animation: slideTop 1s ease forwards;
+  margin-top: 0px;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .burger-menu-button {
+  color: var(--background-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  background-color: var(--highlight-color);;
+  color: var(--text-color);
+  border: 1px solid var(--highlight-color);;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  color: var(--background-color);
+  border: 1px solid var(--background-color);
+}
+
+
+/* ---------- BURGER MENU ---------- */
+
+.burger-menu {
+  display: none;
+  height: 0;
+  /* height: 395px; */
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur (15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.burger-menu.open {
+  height: 295px;
+}
+
+.burger-menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--background-color);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.burger-menu .action-button {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* RESPONSIVE */
+/* Pour les boites de la Flebox */
+@media (max-width: 875px){
+  header {
+    background: none;
+  }
+
+  .navbar .links,
+  .navbar .action-button {
+    display: none;
+  }
+
+  .navbar .burger-menu-button {
+    display:block
+  }
+
+.burger-menu {
+    display:block
+  }
+}
+
+@media (max-width: 576px){
+
+
+.burger-menu {
+    left: 2rem;
+    width: unset;
+  }
+}
+
+
+
+/* ---------------------------------- NOM PRENOM TEXTES ---------------------------------- */
 .home {
   width: 100%;
   height: 100vh;
@@ -102,7 +210,6 @@
   background: linear-gradient(45deg,var(--bonus-color),#6fc4da);
 }
 
-/* ---------------------------------- NOM PRENOM TEXTES ---------------------------------- */
 .home-content {
   background: transparent;
   max-width: 600px;

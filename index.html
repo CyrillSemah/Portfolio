@@ -4,239 +4,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyrill Semah - Graphiste Senior futur Développeur Web fullstack</title>
-  <link rel="shortcut icon" href="./assets/img/LogoCS.svg" />
-  <link rel="stylesheet" href="style.css">
-  <!-- <link rel="stylesheet" href="xppro.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  <a href=""></a>
+  <link rel="shortcut icon" href="./assets/img/LogoCS.svg" />
+  <title>Cyrill Semah - Graphiste Senior futur Développeur Web fullstack</title>
 </head>
+
 
 <body>
 
   <!-- -----------------MENU-------------------- -->
-  <header class="header">
-    <a href="#" class="logo">Portfolio.</a>
-    
-    <nav class="menu">
-      <a href="#" style="--i:1;" class="active">Home</a>
-      <a href="#" style="--i:2;">XP Pro</a>
-      <a href="#" style="--i:3;">Skills</a>
-      <a href="#" style="--i:4;">Projects</a>
-      <a href="#" style="--i:5;">Formations</a>
-      <a href="#" style="--i:6;">Contact</a>
-    </nav>
+  <header>
+    <main class="navbar">
+      <div class="logo">
+        <a href="#">Portfolio.</a>
+      </div>
+
+      <ul class="links">
+        <li><a href="home" style="--i:1;"><b>Home</b></a></li>
+        <li><a href="experiences" style="--i:2;"><b>XP Pro</b></a></li>
+        <li><a href="skills" style="--i:3;"><b>Skills</b></a></li>
+        <li><a href="projects" style="--i:4;"><b>Projects</b></a></li>
+        <li><a href="training" style="--i:5;"><b>Training</b></a></li>
+      </ul>
+
+      <div class="buttons">
+        <a href="#" class="action-button" style="--i:6;"><b>Contact</b></a>
+      </div>
+
+      <!-- -----------------BOUTTON MENU BURGER-------------------- -->
+      <div class="burger-menu-button">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </main>
+  <!-- -----------------MENU BURGER-------------------- -->
+      <div class="burger-menu">
+        <ul class="links">
+          <li><a href="home" style="--i:1;"><b>Home</b></a></li>
+          <li><a href="experiences" style="--i:2;"><b>XP Pro</b></a></li>
+          <li><a href="skills" style="--i:3;"><b>Skills</b></a></li>
+          <li><a href="projects" style="--i:4;"><b>Projects</b></a></li>
+          <li><a href="training" style="--i:5;"><b>Training</b></a></li>
+          <div class="divider"></div>
+          <div class="buttons-burger-menu">
+            <a href="#" class="action-button" style="--i:6;"><b>Contact</b></a>
+          </div>
+        </ul>
+      </div>
   </header>
 
-  <!-- ----------------Link côté------------------ -->
-  <section class="home">
-    <div class="home-sci">
-      <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-      <a href="#"><i class='bx bxl-instagram'></i></a>
-      <a href="#"><i class='bx bxl-github'></i></a>
-    </div>
+  <!-- -----------------SCRIPT MENU BURGER-------------------- -->
+  <script>
+    const burgerMenuButton = document.querySelector('.burger-menu-button')
+    const burgerMenuButtonIcon = document.querySelector('.burger-menu-button i')
+    const burgerMenu = document.querySelector('.burger-menu')
 
-    <!-- -----------------HOME-------------------- -->
-    <div class="home-content">
-      <h3>Hi there! I'm</h3>
-      <h1>Cyrill SEMAH</h1>
-      <p>Graphic designer for over 20 years, I am about to take a big step in my professional life<br>
-        <h4><b>I want to become a web developer, the future is always ahead of me</b></h4></p>
+    burgerMenuButton.onclick = function (){
+      burgerMenu.classList.toggle('open')
+      const isOpen = burgerMenu.classList.contains('open')
+      burgerMenuButtonIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+    }
+  </script>
 
-      <div class="btn-box">
-        <a href="#" style="---i:1;">Download CV</a>
-        <a href="#" style="---i:2;">Let's Talk</a>
-      </div>
-    </div>
+<!-- ----------------Link côté------------------ -->
+<section class="home">
+  <div class="home-sci">
+    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+    <a href="#"><i class='bx bxl-instagram'></i></a>
+    <a href="#"><i class='bx bxl-github'></i></a>
+  </div>
 
-    <div class="home-img">
-      <div class="glowing-circle">
-        <span></span>
-        <span></span>
-        <div class="photoid">
-          <img src="./assets/img/cyrillnb.png" alt="photoid">
-        </div>
-      </div>
-    </div>
+  <!-- -----------------HOME-------------------- -->
+  <div class="home-content">
+    <h3>Hi there! I'm</h3>
+    <h1>Cyrill SEMAH</h1>
+    <p>Graphic designer for over 20 years, I am about to take a big step in my professional life<br>
+      <h4><b>I want to become a web developer, the future is always ahead of me</b></h4></p>
 
-  </section>
-
-  <!------------------ FIN DE HOME ------------------>
-
-
-
-  <!--------------------- XP Pro --------------------->
-<section class="xp">
-  <div class="container">
-    <div class="xppro-content" id="xppro-content">
-    <h2>My professional experiences</h2>
-    </div>
-
-    <div class="carousel">
-      <span></span>
-      <span></span>
-      <div class="slider">
-        <section><br><br>
-          <h3>October 2018 to Today:</h3>
-          <h2>Media Production Coordinator</h2><br>
-          <p>Evolution at Veepee as Media Coordinator, I manage the production of the Retouching team ensuring that it is delivered within the best conditions. Management of priorities as well as escalation blocking points while ensuring that adequate solutions are provided an integral part of my missions. Finally, I contribute to the improvement constant working methodology between cross-functional services. A dynamic and qualitative approach whose main objective is to ensure the efficiency of delivery processes.</p>
-          <div class="veepee">
-            <img src="./assets/img/veepee.png" alt="veepee">
-          </div>
-        </section>
-
-        <section><br><br>
-          <h3>April 2012 to September 2018:</h3>
-          <h2>Graphic Designer Retoucher Senior Chromiste</h2><br>
-          <p>Veepee as a Graphic Designer Retoucher and Photo Chromist in various services, I specialized in the management of the online posting of products and the improvement of processes. As a Key User, I also brought my technical expertise to support my colleagues when they needed it. Furthermore, I had the opportunity to take on a role of team coordinator in the Brand Content department for several months, this which allowed me to develop my skills in project management and strengthen my ability to collaborate effectively with teams transverse. These experiences taught me to work closely collaboration with different departments, with emphasis on optimization synergies to provide solutions adapted to the needs of the company.</p>
-          <div class="venteprivee">
-            <img src="./assets/img/venteprivee.png" alt="venteprivee">
-          </div>
-        </section>
-
-        <section>
-          <br><br><br>
-          <h3>October 2004 to March 2012:</h3>
-          <h2>Manager & Business owner</h2><br>
-          <p>Creation of my company, Dream Design, as an Entrepreneur. It was a communications company practicing photo editing, the creation of models and layout of catalogs and/or look books, production visual identities, the creation of logos, press inserts sold in newsstand, posters, flyers and commercial brochures as well as the creation of websites. I carried out a large number of functions such as coordination, the commercial and administrative side as well as the management artistic and graphic part, all this while respecting my commitments customers regarding delivery times. It was an enriching experience both professionally and personally, particularly in the management of project and team that I was able to have. I supervised projects while working with various service providers such as photographers, web designers and web master, photoengravers, printers and others...</p>
-          <div class="dreamdesign">
-            <img src="./assets/img/dreamdesign.png" alt="dreamdesign">
-          </div>
-        </section>
-
-        <section>
-          <h3>September 2002 to July 2004:</h3>
-          <h2>Apprentice graphic designer</h2><br>
-          <p>Santiago Communication Company within the framework of a qualification contract as a graphic designer, photo retouching, catalog layout creation of visual identities, logo creations, press inserts, posters and flyers. This company allowed me to acquire greater responsibilities, a certain sense of rigor and organization thus allowing me to develop active listening in the management of the projects entrusted to me. This experience is the one that encouraged me to go further by creating my own company.</p>
-          <div class="santiagocom">
-            <img src="./assets/img/santiagocom.png" alt="santiagocom">
-          </div>
-        </section>        
-      </div>
-
-      <div class="controls">
-        <span class="arrow left">
-            <i class="material-icons">
-            keyboard_arrow_left
-            </i>
-        </span>
-
-        <span class="arrow right">
-            <i class="material-icons">
-            keyboard_arrow_right
-            </i>
-        </span>
-
-        <ul>
-          <li class="selected"></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>  
+    <div class="btn-box">
+      <a href="#" style="---i:1;">Download CV</a>
+      <a href="#" style="---i:2;">Let's Talk</a>
     </div>
   </div>
+
+  <div class="home-img">
+    <div class="glowing-circle">
+      <span></span>
+      <span></span>
+      <div class="photoid">
+        <img src="./assets/img/cyrillnb.png" alt="photoid">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!------------------ FIN DE HOME ------------------>
+
+
+
+<!--------------------- XP Pro --------------------->
+<section class="xp">
+<div class="container">
+  <div class="xppro-content" id="xppro-content">
+  <h2>My professional experiences</h2>
+  </div>
+
+  <div class="carousel">
+    <span></span>
+    <span></span>
+    <div class="slider">
+      <section><br><br>
+        <h3>October 2018 to Today:</h3>
+        <h2>Media Production Coordinator</h2><br>
+        <p>Evolution at Veepee as Media Coordinator, I manage the production of the Retouching team ensuring that it is delivered within the best conditions. Management of priorities as well as escalation blocking points while ensuring that adequate solutions are provided an integral part of my missions. Finally, I contribute to the improvement constant working methodology between cross-functional services. A dynamic and qualitative approach whose main objective is to ensure the efficiency of delivery processes.</p>
+        <div class="veepee">
+          <img src="./assets/img/veepee.png" alt="veepee">
+        </div>
+      </section>
+
+      <section><br><br>
+        <h3>April 2012 to September 2018:</h3>
+        <h2>Graphic Designer Retoucher Senior Chromiste</h2><br>
+        <p>Veepee as a Graphic Designer Retoucher and Photo Chromist in various services, I specialized in the management of the online posting of products and the improvement of processes. As a Key User, I also brought my technical expertise to support my colleagues when they needed it. Furthermore, I had the opportunity to take on a role of team coordinator in the Brand Content department for several months, this which allowed me to develop my skills in project management and strengthen my ability to collaborate effectively with teams transverse. These experiences taught me to work closely collaboration with different departments, with emphasis on optimization synergies to provide solutions adapted to the needs of the company.</p>
+        <div class="venteprivee">
+          <img src="./assets/img/venteprivee.png" alt="venteprivee">
+        </div>
+      </section>
+
+      <section>
+        <br><br><br>
+        <h3>October 2004 to March 2012:</h3>
+        <h2>Manager & Business owner</h2><br>
+        <p>Creation of my company, Dream Design, as an Entrepreneur. It was a communications company practicing photo editing, the creation of models and layout of catalogs and/or look books, production visual identities, the creation of logos, press inserts sold in newsstand, posters, flyers and commercial brochures as well as the creation of websites. I carried out a large number of functions such as coordination, the commercial and administrative side as well as the management artistic and graphic part, all this while respecting my commitments customers regarding delivery times. It was an enriching experience both professionally and personally, particularly in the management of project and team that I was able to have. I supervised projects while working with various service providers such as photographers, web designers and web master, photoengravers, printers and others...</p>
+        <div class="dreamdesign">
+          <img src="./assets/img/dreamdesign.png" alt="dreamdesign">
+        </div>
+      </section>
+
+      <section>
+        <h3>September 2002 to July 2004:</h3>
+        <h2>Apprentice graphic designer</h2><br>
+        <p>Santiago Communication Company within the framework of a qualification contract as a graphic designer, photo retouching, catalog layout creation of visual identities, logo creations, press inserts, posters and flyers. This company allowed me to acquire greater responsibilities, a certain sense of rigor and organization thus allowing me to develop active listening in the management of the projects entrusted to me. This experience is the one that encouraged me to go further by creating my own company.</p>
+        <div class="santiagocom">
+          <img src="./assets/img/santiagocom.png" alt="santiagocom">
+        </div>
+      </section>        
+    </div>
+
+    <div class="controls">
+      <span class="arrow left">
+          <i class="material-icons">
+          keyboard_arrow_left
+          </i>
+      </span>
+
+      <span class="arrow right">
+          <i class="material-icons">
+          keyboard_arrow_right
+          </i>
+      </span>
+
+      <ul>
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>  
+  </div>
+</div>
 
 </section>
 <!------------------ FIN DE XP Pro ------------------>
 
 <!--------------------- SKILLS --------------------->
-  
+
 <section class="skills"> 
-    <div class="skills-content" id="skills-content">
-      <h2>My Skills</h2>
+  <div class="skills-content" id="skills-content">
+    <h2>My Skills</h2>
+  </div>
+
+  <div class="container-skills">
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/photoshop.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Adobe Photoshop</h3>
+      </div>
     </div>
 
-    <div class="container-skills">
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/photoshop.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Adobe Photoshop</h3>
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/indesign.png" alt="skill-icon" width="80px">
         </div>
+        <h3>Adobe InDesign</h3>
       </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/indesign.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Adobe InDesign</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/illustrator.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Adobe Illustrator</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/premiere-pro.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Adobe Premiere Pro</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/aftereffect.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Adobe After Effect</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/finalcut.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Final Cut Pro</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/apple.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Apple OS</h3>
-        </div>
-      </div>
-
-      <div class="skill-box">
-        <div class="skill-title">
-          <div class="img">
-            <img src="./assets/icons/windows.png" alt="skill-icon" width="80px">
-          </div>
-          <h3>Windows OS</h3>
-        </div>
-      </div>
-
     </div>
 
-    
-  <section class="softskills-content">
-    <div class="softskills-title" id="softskills-title">
-      <h2>My Soft Skills</h2>
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/illustrator.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Adobe Illustrator</h3>
+      </div>
     </div>
 
-      <div class="softskills">
-        <p>Sense of communication, Ability to adapt, Teamwork, Ability to unite, Analytical skills, Sense of organization, Decision-making ability, Strength of proposal, Ability to question oneself, Viewing height, Proactivity, Agility, Priority management, Results oriented, Spirit of responsibility, Sense of customer service</p>
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/premiere-pro.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Adobe Premiere Pro</h3>
       </div>
+    </div>
 
-  </section>
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/aftereffect.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Adobe After Effect</h3>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/finalcut.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Final Cut Pro</h3>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/apple.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Apple OS</h3>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <div class="skill-title">
+        <div class="img">
+          <img src="./assets/icons/windows.png" alt="skill-icon" width="80px">
+        </div>
+        <h3>Windows OS</h3>
+      </div>
+    </div>
+
+  </div>
+
   
+<section class="softskills-content">
+  <div class="softskills-title" id="softskills-title">
+    <h2>My Soft Skills</h2>
+  </div>
+
+    <div class="softskills">
+      <p>Sense of communication, Ability to adapt, Teamwork, Ability to unite, Analytical skills, Sense of organization, Decision-making ability, Strength of proposal, Ability to question oneself, Viewing height, Proactivity, Agility, Priority management, Results oriented, Spirit of responsibility, Sense of customer service</p>
+    </div>
+
+</section>
+
 </section>
 </body>
 </html>
