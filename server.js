@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000; // Correction ici pour Heroku
+
+// Utilisation du port fourni par Heroku ou du port 3000 en local
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -16,21 +18,21 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'cyrillsemah@gmail.com',
-    pass: 'biaqjaodyvbqvras' // ton mot de passe d'application
+    pass: 'biaqjaodyvbqvras' // mot de passe d'application valide
   }
 });
 
 // Route pour l'envoi d'email
 app.post('/send-email', (req, res) => {
   const { civilite, nom, prenom, societe, email, message } = req.body;
-  
+
   if (!nom || !email || !message) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'Tous les champs requis ne sont pas remplis' 
+    return res.status(400).json({
+      success: false,
+      message: 'Tous les champs requis ne sont pas remplis'
     });
   }
-  
+
   const mailOptions = {
     from: email,
     to: 'cyrillsemah@gmail.com',
@@ -46,22 +48,22 @@ app.post('/send-email', (req, res) => {
       <p>${message}</p>
     `
   };
-  
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Erreur:', error);
-      return res.status(500).json({ 
-        success: false, 
-        message: `L'email n'a pas pu être envoyé. Erreur: ${error.message}` 
+      return res.status(500).json({
+        success: false,
+        message: `L'email n'a pas pu être envoyé. Erreur: ${error.message}`
       });
     }
-    
+
     console.log('Email envoyé:', info.response);
     res.json({ success: true });
   });
 });
 
-// Servir les fichiers statiques (correction du chemin)
+// Servir les fichiers statiques depuis le dossier public (créé à la racine du projet)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Démarrer le serveur
