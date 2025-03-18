@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Nouveau message de contact</h1>
+  
+  <p><strong>Civilité:</strong> <%= @contact.civilite %></p>
+  <p><strong>Nom:</strong> <%= @contact.nom %></p>
+  <% if @contact.prenom.present? %>
+    <p><strong>Prénom:</strong> <%= @contact.prenom %></p>
+  <% end %>
+  <% if @contact.societe.present? %>
+    <p><strong>Société:</strong> <%= @contact.societe %></p>
+  <% end %>
+  <p><strong>Email:</strong> <%= @contact.email %></p>
+  <p><strong>Message:</strong></p>
+  <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+    <%= simple_format(@contact.message) %>
+  </div>
+  
+  <p>Ce message a été envoyé le <%= Time.now.strftime("%d/%m/%Y à %H:%M") %>.</p>
+</body>
+</html>
