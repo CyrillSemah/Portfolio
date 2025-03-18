@@ -4,9 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-
-// Utilisation du port dynamique d'Heroku
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // Correction ici pour Heroku
 
 // Middleware
 app.use(cors());
@@ -18,7 +16,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'cyrillsemah@gmail.com',
-    pass: 'biaqjaodyvbqvras' // Remplace par ton vrai mot de passe d'application
+    pass: 'biaqjaodyvbqvras' // ton mot de passe d'application
   }
 });
 
@@ -26,7 +24,6 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
   const { civilite, nom, prenom, societe, email, message } = req.body;
   
-  // Vérifier les champs requis
   if (!nom || !email || !message) {
     return res.status(400).json({ 
       success: false, 
@@ -64,15 +61,10 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Servir les fichiers statiques depuis un dossier dans ton projet (obligatoire sur Heroku)
+// Servir les fichiers statiques (correction du chemin)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route par défaut pour envoyer la page index.html depuis 'public'
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // Démarrer le serveur
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Serveur démarré sur le port ${port}`);
 });
