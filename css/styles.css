@@ -1,0 +1,261 @@
+/* Variables globales */
+:root {
+    --background-color: #202f66; 
+    --text-color: #eeedec;
+    --accent-color: #2b3f8a;
+    --highlight-color: #c13733;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Titres et polices */
+h1 {
+    font-family: 'Swiss 721 Black Condensed BT', 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chef-project {
+    font-family: 'Swiss 721 Black Condensed BT', 'Arial Black', Arial, sans-serif;
+    font-size: 2rem; 
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.2rem 0 1rem 0;
+}
+
+h2, h3, p, label {
+    font-family: 'Orator Std', 'Arial', sans-serif;
+}
+
+.maintenance-emoji {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+/* Bloc principal */
+.main-content {
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Trait de séparation */
+.separator {
+    border: none;
+    border-top: 2px solid var(--highlight-color);
+    width: 60%;
+    margin: 1.5rem auto;
+}
+
+/* Zone de présentation */
+.presentation {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.presentation p {
+    margin-bottom: 1rem;
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    min-width: 150px;
+}
+
+.btn:hover {
+    background-color: #a72c2a;
+    transform: translateY(-2px);
+}
+
+/* Contact Form (contact.html) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.radio-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.radio-options {
+    display: flex;
+    gap: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+.submit-btn {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+/* Bouton de retour */
+.back-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Statut du formulaire */
+.form-status {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-status.success {
+    color: #4CAF50;
+}
+
+.form-status.error {
+    color: var(--highlight-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .chef-project {
+        font-size: 1.7rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .back-button {
+        top: 1rem;
+        left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    .chef-project {
+        font-size: 1.5rem;
+    }
+    
+    .maintenance-emoji {
+        font-size: 1.2rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

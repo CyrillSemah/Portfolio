@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cyrill SEMAH</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Remplacer la police Google par une police système -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">←</a>
+        
+        <main class="main-content">
+            <h1>Contact</h1>
+            
+            <form id="contactForm" class="contact-form">
+                <!-- Pour la section des boutons radio -->
+                <div class="form-group radio-group">
+                    <span id="civilite-label">Civilité:</span>
+                    <div class="radio-options">
+                        <div>
+                            <input type="radio" id="civilite-mr" name="civilite" value="Mr" required>
+                            <label for="civilite-mr">Mr</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="civilite-mme" name="civilite" value="Mme">
+                            <label for="civilite-mme">Mme</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reste du formulaire inchangé -->
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" autocomplete="given-name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="societe">Société</label>
+                    <input type="text" id="societe" name="societe" autocomplete="organization">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Envoyer</button>
+            </form>
+            
+            <div id="formStatus" class="form-status"></div>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
