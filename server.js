@@ -2,8 +2,11 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const app = express();
-const port = 3000;
+
+// Utilisation du port dynamique d'Heroku
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -15,7 +18,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'cyrillsemah@gmail.com',
-    pass: 'biaqjaodyvbqvras' // Remplacez par votre vrai mot de passe d'application
+    pass: 'biaqjaodyvbqvras' // Remplace par ton vrai mot de passe d'application
   }
 });
 
@@ -61,10 +64,15 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Servir les fichiers statiques
-app.use(express.static('/Users/cyrillsemah/Desktop/page en maintenance'));
+// Servir les fichiers statiques depuis un dossier dans ton projet (obligatoire sur Heroku)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route par défaut pour envoyer la page index.html depuis 'public'
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Démarrer le serveur
-app.listen(port, () => {
-  console.log(`Serveur démarré sur http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Serveur démarré sur le port ${PORT}`);
 });
