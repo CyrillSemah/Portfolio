@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000; // Correction du port pour Heroku
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'cyrillsemah@gmail.com',
-    pass: 'biaqjaodyvbqvras' // Remplacez par votre vrai mot de passe d'application
+    pass: 'biaqjaodyvbqvras'
   }
 });
 
@@ -24,14 +24,13 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
   const { civilite, nom, prenom, societe, email, message } = req.body;
 
-  // Vérifier les champs requis
   if (!nom || !email || !message) {
     return res.status(400).json({ 
       success: false, 
       message: 'Tous les champs requis ne sont pas remplis' 
     });
   }
-  
+
   const mailOptions = {
     from: email,
     to: 'cyrillsemah@gmail.com',
@@ -47,7 +46,7 @@ app.post('/send-email', (req, res) => {
       <p>${message}</p>
     `
   };
-  
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Erreur:', error);
@@ -56,21 +55,19 @@ app.post('/send-email', (req, res) => {
         message: `L'email n'a pas pu être envoyé. Erreur: ${error.message}` 
       });
     }
-    
     console.log('Email envoyé:', info.response);
     res.json({ success: true });
   });
 });
 
-// Servir les fichiers statiques correctement sur Heroku
-app.use(express.static(__dirname + '/'));
+// Correction pour servir correctement les fichiers statiques et index.html sur Heroku
+app.use(express.static(path.join(__dirname, '/')));
 
-// Route pour la page d'accueil (index.html)
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Démarrer le serveur avec le port dynamique Heroku
+// Démarrage du serveur
 app.listen(port, () => {
   console.log(`Serveur démarré sur le port ${port}`);
 });
